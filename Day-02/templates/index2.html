@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loops</title>
+</head>
+
+<body>
+
+    <h2>Fruits</h2>
+
+    <ul>
+
+        {% for fruit in fruits %}
+            <li>{{ fruit }}</li>
+        {% endfor %}
+
+    </ul>
+
+    <h2>Students</h2>
+
+    <ol>
+
+        {% for student in students %}
+            <li>{{ student }}</li>
+        {% endfor %}
+
+    </ol>
+
+    <h2>Products</h2>
+
+    <table border="1">
+
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+
+        {% for product in products %}
+
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+    <h2>Items</h2>
+
+    {% for item in items %}
+
+        <p>{{ item }}</p>
+
+    {% else %}
+
+        <p>No items available</p>
+
+    {% endfor %}
+
+    <h2>Tasks</h2>
+
+    {% for task in tasks %}
+
+        <p>
+            {{ loop.index }}. {{ task }}
+        </p>
+
+    {% endfor %}
+
+    <h2>Even Numbers</h2>
+
+    {% for number in numbers %}
+
+        {% if number % 2 == 0 %}
+            <p>{{ number }}</p>
+        {% endif %}
+
+    {% endfor %}
+
+</body>
+</html>

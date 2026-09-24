@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dictionaries and Complex Data</title>
+</head>
+
+<body>
+
+    <h2>User Bio</h2>
+
+    <p>Name: {{ profile.name }}</p>
+
+    <p>City: {{ profile.city }}</p>
+
+    <h3>Skills:</h3>
+
+    <ul>
+
+        {% for skill in profile.skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+
+    </ul>
+
+    <h2>Student Mark Sheet</h2>
+
+    <table border="1">
+
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+
+        {% for score in scores %}
+
+        <tr>
+            <td>{{ score.subject }}</td>
+            <td>{{ score.marks }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <h2>Blog Posts</h2>
+
+    {% for post in posts %}
+
+        <div>
+
+            <h3>{{ post.title }}</h3>
+
+            <p>Author: {{ post.author }}</p>
+
+            <p>Views: {{ post.views }}</p>
+
+        </div>
+
+    {% endfor %}
+
+    <h2>Shopping Cart</h2>
+
+    {% for item, price in cart.items() %}
+
+        <p>
+            {{ item }} - ${{ price }}
+        </p>
+
+    {% endfor %}
+
+    <h2>Players</h2>
+
+    {% for player in players %}
+
+        {% if player.score > 90 %}
+
+            <p>
+                <strong>
+                    {{ player.name }}
+                </strong>
+                - {{ player.score }}
+            </p>
+
+        {% else %}
+            <p>
+                {{ player.name }}
+                - {{ player.score }}
+            </p>
+        {% endif %}
+    {% endfor %}
+
+    <h2>Technology Directory</h2>
+
+    {% for category, tools in directory.items() %}
+
+        <h3>{{ category }}</h3>
+
+        <ul>
+
+            {% for tool in tools %}
+                <li>{{ tool }}</li>
+            {% endfor %}
+
+        </ul>
+
+    {% endfor %}
+
+</body>
+</html>

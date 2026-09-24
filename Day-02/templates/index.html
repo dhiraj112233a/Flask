@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Basic Routes</title>
+</head>
+
+<body>
+
+    
+    <h1>{{ app_name }}</h1>
+
+    <p>Age: {{ age }}</p>
+   
+    <footer>
+        © {{ current_year }} My Web App
+    </footer>
+
+    <p>
+        Student Name: {{ student_name }}
+        <br>
+        Score: {{ score }}
+    </p>
+
+    {% if username %}
+        <h2>Hello, {{ username }}!</h2>
+    {% endif %}
+
+    {% if product_id %}
+        <h2>Product ID: {{ product_id }}</h2>
+    {% endif %}
+
+</body>
+</html>
