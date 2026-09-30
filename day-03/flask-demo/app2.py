@@ -36,19 +36,5 @@ def add_employee():
 
     return jsonify(new_employee), 201
 
-@app.route("/api/emp/<int:emp_id>", methods=["DELETE"])
-def delete_employee(emp_id):
-
-    for employee in employees:
-        if employee["id"] == emp_id:
-            employees.remove(employee)
-            return jsonify({
-                "message": "Employee deleted successfully"
-            })
-
-    return jsonify({
-        "message": "Employee not found"
-    }), 404
-
 if __name__ == "__main__":
     app.run(debug=True)
